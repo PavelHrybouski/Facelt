@@ -1,26 +1,174 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5GJ-WQ-CFS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Split View Controller-->
+        <scene sceneID="6ba-qZ-tsy">
+            <objects>
+                <splitViewController id="5GJ-WQ-CFS" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="YzE-rF-Nae" kind="relationship" relationship="masterViewController" id="K4X-fO-Nsg"/>
+                        <segue destination="tvg-qr-cvh" kind="relationship" relationship="detailViewController" id="nDb-iN-bhN"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qni-MF-UZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1180" y="-313"/>
+        </scene>
+        <!--Emotions View Controller-->
+        <scene sceneID="bkz-58-E4K">
+            <objects>
+                <viewController id="H22-lg-g9c" customClass="EmotionsViewController" customModule="Facelt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Caf-a3-KAx"/>
+                        <viewControllerLayoutGuide type="bottom" id="0PT-5q-Q9N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ekc-L3-LnH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nrD-Rg-ss1">
+                                <rect key="frame" x="77" y="208.5" width="220" height="249"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ic-Zf-hEq">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Angry"/>
+                                        <connections>
+                                            <segue destination="tvg-qr-cvh" kind="showDetail" identifier="angry" id="qW8-FY-eXS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBc-kv-DNR">
+                                        <rect key="frame" x="0.0" y="63" width="220" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Happy"/>
+                                        <connections>
+                                            <segue destination="tvg-qr-cvh" kind="showDetail" identifier="happy" id="Pgo-lP-ZYP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRn-Po-dOE">
+                                        <rect key="frame" x="0.0" y="126" width="220" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Worried"/>
+                                        <connections>
+                                            <segue destination="tvg-qr-cvh" kind="showDetail" identifier="worried" id="JXR-u5-DLk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctE-oB-bs4">
+                                        <rect key="frame" x="0.0" y="189" width="220" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Mischievous"/>
+                                        <connections>
+                                            <segue destination="tvg-qr-cvh" kind="showDetail" identifier="mischievous" id="YTL-QK-K54"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nrD-Rg-ss1" firstAttribute="centerX" secondItem="Ekc-L3-LnH" secondAttribute="centerX" id="Ult-V9-Snm"/>
+                            <constraint firstItem="nrD-Rg-ss1" firstAttribute="centerY" secondItem="Ekc-L3-LnH" secondAttribute="centerY" id="Y3F-6n-mbS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hEL-dq-tbt"/>
+                    <connections>
+                        <outlet property="stackView" destination="nrD-Rg-ss1" id="mqM-82-0fV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zq-gj-pv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="-772.26386806596713"/>
+        </scene>
+        <!--Face View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FaceViewController" customModule="Facelt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="redraw" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziC-H9-gCu" customClass="FaceView" customModule="Facelt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Dsm-aA-DKp" appends="YES" id="E4w-fS-ww2"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ziC-H9-gCu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="N6M-cS-6KK"/>
+                            <constraint firstItem="ziC-H9-gCu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ub9-mT-kYy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ziC-H9-gCu" secondAttribute="trailing" id="guj-dj-jzl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ziC-H9-gCu" secondAttribute="bottom" id="rHf-ca-E8L"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X0c-Qo-UkV"/>
+                    <connections>
+                        <outlet property="faceView" destination="ziC-H9-gCu" id="Bc8-Ci-QE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Dsm-aA-DKp">
+                    <connections>
+                        <action selector="toggleEyes:" destination="BYZ-38-t0r" id="Uf0-pf-jYz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1980" y="44.527736131934034"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XGO-4e-VSP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YzE-rF-Nae" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1un-OK-4vw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H22-lg-g9c" kind="relationship" relationship="rootViewController" id="KGI-CL-63F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFv-No-aYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="-772.26386806596713"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pae-zb-2fH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tvg-qr-cvh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6gw-ph-YJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c2Q-jS-Xnh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ijy-2Y-Ihf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="44.527736131934034"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="qW8-FY-eXS"/>
+    </inferredMetricsTieBreakers>
 </document>
